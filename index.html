@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+<title>HD VIDEO PLAYER</title>
+<style>
+    * { margin: 0; padding: 0; }
+  body { background: #000; color: #fff; font-family: Arial; }
+  .header {
+    text-align: center;
+    padding: 15px;
+    background: linear-gradient(90deg, #00ff88, #00ccff);
+    font-weight: bold;
+    font-size: 20px;
+  }
+  video {
+    width: 100%;
+    height: 100vh;
+    object-fit: contain; /* biar HD ga gepeng */
+    background: #000;
+  }
+</style>
+</head>
+<body>
+  <div class="header">🎬 APK VIDEO HD</div>
+
+  <video id="video" controls playsinline autoplay>
+    <source src="LINK_VIDEO_KAMU_DISINI.mp4" type="video/mp4">
+    Browser tidak support video.
+  </video>
+
+<script>
+  // Auto fullscreen pas klik play
+  const vid = document.getElementById('video');
+  vid.addEventListener('play', () => {
+    if (vid.requestFullscreen) vid.requestFullscreen();
+  });
+</script>
+</body>
+</html>
